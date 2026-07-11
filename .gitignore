@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# Internal working docs (claim ledgers, handoffs, strategy) — kept local,
+# never published to the public GitHub Pages repo.
+/docs/
