@@ -2,7 +2,7 @@ export const resume = {
   pdfPath: "/resume/Karthikeyan-Kumaraguruparan-Resume.pdf",
   meta: {
     fileName: "Karthikeyan-Kumaraguruparan-Resume.pdf",
-    fileSize: "162 KB",
+    fileSize: "164 KB",
     pages: 1,
     updated: "July 2026",
     target: "Early-career backend and distributed-systems roles",
