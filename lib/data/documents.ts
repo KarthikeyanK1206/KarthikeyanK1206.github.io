@@ -39,6 +39,12 @@ export interface CaseChallenge {
   body: string[];
 }
 
+export interface CaseGlance {
+  what: string;
+  role: string;
+  takeaway: string;
+}
+
 export interface TerminalSample {
   title: string;
   code: string;
@@ -68,6 +74,7 @@ export interface CaseDoc {
   stack: string[];
   summary: string;
   signalLine: string;
+  glance: CaseGlance;
   evidence: Evidence[];
   problem: string[];
   motivation: string[];
@@ -85,6 +92,7 @@ export interface CaseDoc {
   terminal?: TerminalSample;
   screenshot?: CaseScreenshot;
   external?: { href: string; label: string };
+  sourceNote?: string;
 }
 
 export const docs: CaseDoc[] = [
@@ -105,6 +113,11 @@ export const docs: CaseDoc[] = [
       "NimbusVault explores a practical storage question: should a cold object and a hot object pay the same replication cost? The implementation combines a fixed-leader quorum metadata log, versioned chunk storage, heartbeat-driven access windows, and staged replica-set changes. It is a bounded prototype, not a full Raft implementation or a production-ready object store.",
     signalLine:
       "Fixed-leader quorum WAL · RF 2/3/5 tiers · staged replica reconfiguration",
+    glance: {
+      what: "A C++17/gRPC/RocksDB object store that retiers chunks between 2, 3, and 5 replicas as access patterns change. Group course project at USC.",
+      role: "The metadata plane: quorum log replication, the tier policy with its 3-promote/5-demote hysteresis, the staged reconfiguration flow, and the failure-oriented test artifacts.",
+      takeaway: "A replica-set change is two quorum commits, not a metadata swap — reads keep a valid fallback the entire move. Deliberately not full Raft: fixed leader, no election, stated plainly.",
+    },
     evidence: [
       {
         value: "2 / 3 / 5",
@@ -117,9 +130,9 @@ export const docs: CaseDoc[] = [
         detail: "Commit START, copy and verify, then commit the stable set.",
       },
       {
-        value: "10 + 8",
-        label: "test artifacts",
-        detail: "Ten unit-test files and eight integration scenarios are authored in the repo.",
+        value: "69",
+        label: "unit tests authored",
+        detail: "Sixty-nine GoogleTest cases in ten files, plus eight scripted integration scenarios, authored in the repo.",
       },
     ],
     problem: [
@@ -185,7 +198,7 @@ export const docs: CaseDoc[] = [
       },
     ],
     validation: [
-      "The repository contains ten GoogleTest source files covering the WAL, placement, policy, recovery, client behavior, and replica repair.",
+      "The repository contains sixty-nine GoogleTest cases across ten source files, covering the WAL, placement, policy, recovery, client behavior, and replica repair.",
       "Eight shell scenarios exercise service loss, reconfiguration, and follower behavior. They are authored test artifacts, not a claimed green CI run.",
       "This portfolio deliberately omits the earlier throughput, tail-latency, and linearizability claims because the preserved artifacts do not substantiate them.",
     ],
@@ -214,6 +227,8 @@ export const docs: CaseDoc[] = [
         "The honest cost: the transition consumes extra capacity while both sets exist, and abort paths for a move that dies halfway still need explicit rollback handling — which is why that item sits in the limitations list rather than the claims.",
       ],
     },
+    sourceNote:
+      "Source: course repository, currently private — code walkthrough available on request.",
     headings: {
       problem: "Why one replication factor cannot fit every chunk",
       scope: "The course risk budget, and my slice of the system",
@@ -246,6 +261,11 @@ export const docs: CaseDoc[] = [
       "raplscope reads cumulative RAPL energy counters exposed by Linux, corrects counter wraparound, and reports joules and power for either a time window or the exact lifetime of a wrapped command. Its strongest engineering quality is restraint: raw I/O, pure math, process lifecycle, and rendering are kept separate and testable.",
     signalLine:
       "Boundary-snapshot totals · wrap-safe deltas · Unix-compatible process semantics",
+    glance: {
+      what: "A zero-dependency Go CLI that measures whole-system energy from Linux RAPL counters — /usr/bin/time, but for joules. Public repo, MIT license.",
+      role: "Sole author: domain discovery, wrap-safe counter math, process wrapping, output formats, the fake-sysfs test seam, and the CSV dashboard. Started at Samsung PRISM, since rebuilt end to end.",
+      takeaway: "Totals come from boundary snapshots, not summed ticker samples — so a 50 ms command measures correctly even at a 1-second sampling interval.",
+    },
     evidence: [
       {
         value: "0",
@@ -414,6 +434,11 @@ samples        14`,
       "RAEF starts from the dangerous window between sending a state-changing tool call and receiving its reply. It records deterministic execution identity and durable transaction state so a restart can distinguish intent-only work from a dispatched, locally ambiguous write. The current prototype models capability-aware recovery and explicit handoff; it does not claim universal exactly-once execution.",
     signalLine:
       "Log before send · deterministic execution identity · safety-first handoff",
+    glance: {
+      what: "A Python/SQLite runtime that logs an LLM agent's tool intent before dispatch, so a crash between send and acknowledgement leaves a classifiable state instead of a guess. Group course project at USC.",
+      role: "The durable transaction model: deterministic SHA-256 execution identity, the log-before-send protocol, recovery classification, and the 25-test suite.",
+      takeaway: "An ambiguous write is a typed, durable state — replay only when it is provably safe, verify when the target allows it, hand off when it doesn't. No exactly-once slogan.",
+    },
     evidence: [
       {
         value: "SHA-256",
@@ -523,6 +548,8 @@ samples        14`,
         "The unresolved edge is documented rather than hidden: a generic adapter can still swallow the execution identity that deduplication depends on, which is why the capability contract sits in the limitations and future-work lists.",
       ],
     },
+    sourceNote:
+      "Source: course repository, currently private — code walkthrough available on request.",
     headings: {
       problem: "The dangerous window between send and acknowledge",
       scope: "Local-first on purpose, and my slice of the runtime",

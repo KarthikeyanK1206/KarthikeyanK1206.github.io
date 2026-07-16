@@ -429,6 +429,8 @@
   .case-kicker,
   .architecture-heading span,
   .case-meta dt,
+  .case-glance-title,
+  .case-glance dt,
   .mobile-field-label {
     color: var(--ink-2);
     font-family: var(--font-mono);
@@ -891,6 +893,13 @@
     margin-top: 1rem;
   }
 
+  .case-source-note {
+    margin-top: 0.85rem;
+    color: var(--ink-2);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
   .project-row-arrow {
     align-self: center;
     color: var(--ink-2);
@@ -1280,6 +1289,33 @@
     font-family: var(--font-serif);
     font-size: 1.2rem;
     line-height: 1.65;
+  }
+
+  .case-glance {
+    max-width: 46rem;
+    margin-top: 1.75rem;
+    padding: 1.15rem 1.4rem 1.3rem;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    background: var(--surface);
+  }
+
+  .case-glance-title {
+    color: var(--accent);
+  }
+
+  .case-glance dl {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 0.9rem;
+  }
+
+  .case-glance dd {
+    margin-top: 0.25rem;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .case-section-nav {

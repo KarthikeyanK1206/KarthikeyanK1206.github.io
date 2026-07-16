@@ -77,13 +77,33 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <article className="case-article">
         <p className="case-summary">{doc.summary}</p>
 
+        <aside className="case-glance" aria-label="The 30-second version">
+          <p className="case-glance-title">The 30-second version</p>
+          <dl>
+            <div>
+              <dt>What it is</dt>
+              <dd>{doc.glance.what}</dd>
+            </div>
+            <div>
+              <dt>What I did</dt>
+              <dd>{doc.glance.role}</dd>
+            </div>
+            <div>
+              <dt>Remember one thing</dt>
+              <dd>{doc.glance.takeaway}</dd>
+            </div>
+          </dl>
+        </aside>
+
         <nav className="case-section-nav" aria-label="Case study sections">
           <a href="#problem">Problem</a>
+          <a href="#constraints">Scope</a>
           <a href="#architecture">Architecture</a>
           <a href="#decisions">Decisions</a>
           <a href="#challenge">Challenge</a>
           <a href="#validation">Validation and limits</a>
           <a href="#lessons">Lessons</a>
+          <a href="#next-steps">Next steps</a>
         </nav>
 
         <section className="case-section" id="problem">

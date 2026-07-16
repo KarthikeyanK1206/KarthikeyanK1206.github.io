@@ -47,6 +47,8 @@ export function DocHeader({ doc }: { doc: CaseDoc }) {
         {doc.stack.map((item) => <Badge key={item}>{item}</Badge>)}
       </div>
 
+      {doc.sourceNote && <p className="case-source-note">{doc.sourceNote}</p>}
+
       <div className="evidence-grid">
         {doc.evidence.map((item) => (
           <div key={item.label} className="evidence-item">
