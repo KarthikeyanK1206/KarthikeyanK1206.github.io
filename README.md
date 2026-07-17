@@ -46,11 +46,16 @@ Legacy `/log` and `/notes` routes redirect to standard recruiter-facing pages.
 
 ## Content Integrity
 
-The project repositories were audited at source level. The site deliberately
-does not repeat earlier NimbusVault performance/linearizability claims or RAEF
-exactly-once claims because the preserved artifacts do not substantiate them.
-Group work is labeled `Group Project`, personal focus is separated from the
-team-built system, and every case study names its known limitations.
+The project repositories were audited at source level, and every quantitative
+claim maps to preserved, dated evidence (see `docs/content-verification.md`).
+NimbusVault's linearizability and workload numbers are cited only as bounded,
+recorded localhost results — including the honest finding that adaptive mode
+cost throughput and tail latency in the capture. RAEF's crash-matrix result is
+cited per its scope (nine phases, one demonstrated action, mock target), never
+as universal exactly-once execution. The old unsupported claims (benchmark
+gains, unconditional duplicate prevention) remain withdrawn. Group work is
+labeled `Group Project`, personal focus is separated from the team-built
+system, and every case study names its known limitations.
 
 Project content lives in `lib/data/documents.ts`; profile, resume, experience,
 and principles live in the other files under `lib/data/`.

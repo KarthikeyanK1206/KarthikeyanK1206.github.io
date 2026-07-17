@@ -2,7 +2,7 @@ export const resume = {
   pdfPath: "/resume/Karthikeyan-Kumaraguruparan-Resume.pdf",
   meta: {
     fileName: "Karthikeyan-Kumaraguruparan-Resume.pdf",
-    fileSize: "164 KB",
+    fileSize: "163 KB",
     pages: 1,
     updated: "July 2026",
     target: "Early-career backend and distributed-systems roles",
@@ -63,7 +63,7 @@ export const resume = {
     },
     {
       group: "Cloud and delivery",
-      items: ["AWS Lambda", "API Gateway", "IAM", "KMS", "Docker", "Jenkins", "Ansible", "Nginx", "Linux"],
+      items: ["AWS Lambda", "API Gateway", "IAM", "KMS", "Docker", "Jenkins", "GitHub Actions", "Ansible", "Nginx", "Linux"],
     },
     {
       group: "Data and systems",

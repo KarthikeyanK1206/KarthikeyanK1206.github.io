@@ -24,7 +24,7 @@ const EXPLORING = [
   },
   {
     topic: "Tests that assert the external invariant",
-    detail: "RAEF's fault-injection demo checks process completion, not side-effect counts. Building a crash-phase-by-capability matrix that asserts what actually happened remotely is the open problem I keep returning to.",
+    detail: "RAEF's recorded crash matrix asserts side-effect counts from the target's own commit counter — nine phases, exactly one commit each. Extending that from the mock target to real services across capability tiers is the open problem I keep returning to.",
     href: "/work/raef",
   },
   {

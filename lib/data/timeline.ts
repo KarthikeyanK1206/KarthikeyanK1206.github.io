@@ -99,7 +99,7 @@ export const education: EducationEntry[] = [
       "Graduate work centered on distributed systems, algorithms, databases, and fault-tolerant software. GPA 3.53 / 4.00. The two systems projects below are where the coursework became running code.",
     highlights: [
       { text: "Built the metadata plane of a quorum-replicated object store with adaptive replica tiers.", href: "/work/nimbusvault" },
-      { text: "Modeled durable recovery for state-changing LLM-agent tool calls.", href: "/work/raef" },
+      { text: "Built the durable transaction core of a crash-recovery runtime for state-changing LLM-agent tool calls.", href: "/work/raef" },
     ],
   },
   {

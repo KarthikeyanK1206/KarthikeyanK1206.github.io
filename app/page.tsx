@@ -36,7 +36,7 @@ const WORK_PREVIEWS = [
     slug: "nimbusvault",
     hook: "Should cold data pay the same replication bill as hot data?",
     proof:
-      "A C++ object store that retiers chunks between 2, 3, and 5 replicas — while readers stay correct mid-move.",
+      "A C++ object store that retiers chunks between 2, 3, and 5 replicas while readers stay correct mid-move — recorded concurrent histories pass a per-key linearizability check even during reconfiguration.",
   },
   {
     slug: "raplscope",
@@ -48,7 +48,7 @@ const WORK_PREVIEWS = [
     slug: "raef",
     hook: "The agent crashed after the payment was sent — and before the reply came back.",
     proof:
-      "A Python runtime that logs intent before dispatch, so a restart can tell replayable work from an ambiguous write.",
+      "A Python runtime that logs tool intent before dispatch — in the recorded crash matrix, all nine injected crash phases end with exactly one commit at the mock target, zero duplicates.",
   },
 ];
 
