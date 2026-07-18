@@ -48,7 +48,7 @@ export default function AboutPage() {
             A year on a production financing platform taught me that reliability is usually made of ordinary decisions: a durable workflow, a reversible deployment, a clear timeout, a useful log, a runbook another engineer can follow. Graduate school is where I study the harder boundaries behind those decisions — quorum state, replica transitions, ambiguous remote writes.
           </p>
           <p>
-            I do my best work on teams that write things down: design notes before code, honest review comments, tests and documentation treated as part of delivery rather than cleanup. I'd rather raise a trade-off early and be argued out of it than defend it after it ships.
+            I learn unfamiliar layers by reading the primary source and building against it — the RAPL/powercap subsystem during one internship, production Temporal workflows during the other. And I do my best work on teams that write things down: design notes before code, honest review comments, tests and documentation treated as part of delivery rather than cleanup. I'd rather raise a trade-off early and be argued out of it than defend it after it ships.
           </p>
         </div>
       </header>
@@ -92,7 +92,7 @@ export default function AboutPage() {
       <section className="about-section claims-note" aria-labelledby="claims-title">
         <h2 className="about-section-title" id="claims-title">A note on claims</h2>
         <p>
-          Numbers on this site are backed by artifacts you can inspect — test files you can count, configuration you can read, limitations stated next to the things they limit. Where I could not reproduce an earlier claim from the preserved code, I removed the claim rather than the caveat.
+          Project numbers on this site are backed by artifacts you can inspect — test files you can count, configuration you can read, recorded runs preserved in the repositories. Employer-side figures are reported from my experience in those roles. Where an earlier project claim could not be reproduced from the preserved evidence, I removed the claim rather than the caveat.
         </p>
       </section>
 

@@ -70,7 +70,6 @@ export interface CaseDoc {
   period: string;
   context: string;
   focus: string;
-  chapterRole: string;
   stack: string[];
   summary: string;
   signalLine: string;
@@ -107,16 +106,15 @@ export const docs: CaseDoc[] = [
     period: "2026",
     context: "Group Project · USC distributed systems",
     focus: "Metadata replication, adaptive policy, reconfiguration, and failure testing",
-    chapterRole: "Breadth · distributed control planes",
     stack: ["C++17", "gRPC", "Protocol Buffers", "RocksDB", "CMake"],
     summary:
-      "NimbusVault explores a practical storage question: should a cold object and a hot object pay the same replication cost? The implementation combines a fixed-leader quorum metadata log, versioned chunk storage, heartbeat-driven access windows, and staged replica-set changes — validated by a passing unit and live-cluster integration suite and by recorded linearizability checks over concurrent histories. It is a bounded prototype, not a full Raft implementation or a production-ready object store.",
+      "NimbusVault starts from a practical storage question: should a cold object and a hot object pay the same replication cost? The implementation combines a fixed-leader quorum metadata log, versioned chunk storage, heartbeat-driven access windows, and staged replica-set changes. It is a bounded prototype, not a full Raft implementation or a production-ready object store.",
     signalLine:
       "Fixed-leader quorum WAL · RF 2/3/5 tiers · recorded 60/60-key linearizability checks",
     glance: {
       what: "A C++17/gRPC/RocksDB object store that retiers chunks between 2, 3, and 5 replicas as access patterns change. Group course project at USC; public repo with CI.",
       role: "The metadata plane: quorum log replication, the tier policy with its 3-promote/5-demote hysteresis, the staged reconfiguration flow, and the verification evidence — unit and live-cluster suites plus recorded workload histories.",
-      takeaway: "A replica-set change is two quorum commits, not a metadata swap — reads keep a valid fallback the entire move, and the recorded concurrent histories stay linearizable while it happens. Deliberately not full Raft: fixed leader, no election, stated plainly.",
+      takeaway: "A replica-set change is two quorum commits, not a metadata swap — reads keep a valid fallback the entire move, and the recorded concurrent histories stay linearizable while it happens. Deliberately not full Raft: fixed leader, no election.",
     },
     evidence: [
       {
@@ -259,7 +257,6 @@ export const docs: CaseDoc[] = [
     period: "Samsung PRISM, 2023 · current version rebuilt",
     context: "Project internship deliverable",
     focus: "End-to-end CLI design, counter math, process lifecycle, output, and testing",
-    chapterRole: "Craft · a finished Unix tool",
     stack: ["Go", "Linux", "sysfs", "RAPL", "HTML", "CSV"],
     summary:
       "raplscope reads cumulative RAPL energy counters exposed by Linux, corrects counter wraparound, and reports joules and power for either a time window or the exact lifetime of a wrapped command. Its strongest engineering quality is restraint: raw I/O, pure math, process lifecycle, and rendering are kept separate and testable.",
@@ -432,16 +429,15 @@ samples        14`,
     period: "2026",
     context: "Group Project · USC fault-tolerant systems",
     focus: "Durable intent logging, execution identity, verification-driven recovery, and evidence design",
-    chapterRole: "Frontier · reliability for AI agents",
     stack: ["Python", "SQLite", "WAL", "LangChain", "OpenRouter"],
     summary:
-      "RAEF starts from the dangerous window between sending a state-changing tool call and receiving its reply. Every call is journaled to SQLite before dispatch under a deterministic execution ID, so a restart replays committed results, verifies ambiguous writes against the target, and hands off what it cannot prove. In the recorded nine-phase crash matrix, every phase ends with exactly one commit at the mock target — a demonstrated, bounded result, not a universal exactly-once claim.",
+      "RAEF starts from the dangerous window between sending a state-changing tool call and receiving its reply. Every call is journaled to SQLite before dispatch under a deterministic execution ID, so a restart replays committed results, verifies ambiguous writes against the target, and hands off what it cannot prove.",
     signalLine:
       "Log before send · deterministic execution identity · nine recorded crash phases, one mock-target commit each",
     glance: {
       what: "A dependency-free Python/SQLite runtime that journals an LLM agent's tool intent before dispatch, so a crash between send and acknowledgement leaves a classifiable, recoverable state instead of a guess. Group course project at USC; public repo with CI.",
       role: "The durable transaction model: deterministic SHA-256 execution identity, the log-before-send protocol, verification-driven recovery, the operator CLI with its invariant audit, and the 47-test suite.",
-      takeaway: "An ambiguous write is a typed, durable state — verified against the target, replayed only when provably absent, handed off when unprovable. The recorded crash matrix ends all nine phases with exactly one mock-target commit; the boundary of that guarantee is stated, not sloganized.",
+      takeaway: "An ambiguous write is a typed, durable state — verified against the target, replayed only when provably absent, handed off when unprovable. The recorded crash matrix ends all nine phases with exactly one mock-target commit — a demonstrated, bounded result, not a universal exactly-once claim.",
     },
     evidence: [
       {

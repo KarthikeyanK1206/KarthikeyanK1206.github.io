@@ -2,13 +2,13 @@ export const resume = {
   pdfPath: "/resume/Karthikeyan-Kumaraguruparan-Resume.pdf",
   meta: {
     fileName: "Karthikeyan-Kumaraguruparan-Resume.pdf",
-    fileSize: "163 KB",
+    fileSize: "162 KB",
     pages: 1,
     updated: "July 2026",
-    target: "Early-career backend and distributed-systems roles",
+    target: "New-grad backend/infrastructure SDE roles · available May 2027",
   },
   summary:
-    "Backend and distributed-systems engineer with a year of production internship experience building multi-tenant services, durable workflows, AWS onboarding, and delivery automation. Currently completing an MS in Computer Science at USC and building systems prototypes around replication, crash recovery, and Linux instrumentation.",
+    "Backend and distributed-systems engineer: a year-long software engineering internship building production multi-tenant services (Node.js, Temporal, AWS), now completing an MS in Computer Science at USC. Systems projects on failure behavior, all open source with green CI. Seeking new-grad backend/infrastructure SDE roles, available May 2027.",
   education: [
     {
       school: "University of Southern California",
@@ -55,7 +55,7 @@ export const resume = {
   skills: [
     {
       group: "Languages",
-      items: ["Go", "Python", "C++", "Java", "TypeScript", "JavaScript", "SQL", "Bash"],
+      items: ["Go", "Python", "C++", "TypeScript", "SQL", "Bash"],
     },
     {
       group: "Backend",
@@ -67,7 +67,7 @@ export const resume = {
     },
     {
       group: "Data and systems",
-      items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "RocksDB", "SQLite", "Quorum replication", "Write-ahead logging", "Crash recovery"],
+      items: ["MongoDB", "RocksDB", "SQLite", "Quorum replication", "Write-ahead logging", "Crash recovery"],
     },
   ],
   publication: {

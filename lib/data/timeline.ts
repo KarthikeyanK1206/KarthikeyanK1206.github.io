@@ -22,13 +22,6 @@ export interface EducationEntry {
   highlights: { text: string; href?: string }[];
 }
 
-export interface WorkHabit {
-  n: string;
-  title: string;
-  body: string;
-  proof: string;
-}
-
 export const roles: RoleEntry[] = [
   {
     period: "Jul 2023 - Jul 2024",
@@ -36,7 +29,7 @@ export const roles: RoleEntry[] = [
     organization: "Clar Technologies · client: Skuchain",
     location: "Coimbatore, India",
     narrative:
-      "A year inside a production multi-tenant supply-chain-financing platform, working on a distributed team across services, cloud onboarding, and the delivery pipeline that shipped all of it. The work was ordinary in the best sense: durable workflows, documented APIs, repeatable environments, and releases that did not depend on anyone's memory.",
+      "A year inside a production multi-tenant supply-chain-financing platform, working on a distributed team across services, cloud onboarding, and the delivery pipeline that shipped all of it. The work covered durable workflows, documented APIs, repeatable environments, and delivery processes that did not depend on manual steps.",
     bullets: [
       {
         context: "Financing operations run as long, multi-step processes that must survive restarts and partial failures.",
@@ -56,7 +49,7 @@ export const roles: RoleEntry[] = [
       {
         context: "The platform fronted everything with a single Nginx reverse proxy.",
         action:
-          "Operated it for 12 months without a recorded outage — reliability practiced as routine configuration discipline, not heroics.",
+          "Operated it for 12 months without a recorded outage.",
       },
     ],
     related: { href: "/work/raef", label: "Durable workflows led to RAEF" },
@@ -110,26 +103,5 @@ export const education: EducationEntry[] = [
     summary:
       "GPA 9.23 / 10.0. Contributed to an IEEE conference publication on an IoT medical device as an undergraduate research collaboration.",
     highlights: [],
-  },
-];
-
-export const workHabits: WorkHabit[] = [
-  {
-    n: "01",
-    title: "Documentation and tests ship with the feature.",
-    body: "I treat the doc and the test seam as part of the deliverable, not the cleanup after it.",
-    proof: "8+ partner APIs documented for external integrators at Clar; raplscope's injectable fake-sysfs seam keeps every code path testable without hardware.",
-  },
-  {
-    n: "02",
-    title: "Unfamiliar systems are learnable systems.",
-    body: "I learn new layers by reading the primary source and building against it, not by waiting for a tutorial.",
-    proof: "Went from never having touched RAPL to a working powercap-based measurement tool within one internship; ran Temporal workflows in production as an intern.",
-  },
-  {
-    n: "03",
-    title: "Trade-offs get said out loud, early.",
-    body: "Every design choice has a cost, and naming it up front is cheaper than defending it later.",
-    proof: "Each case study on this site publishes a decision / instead-of / why / cost table and a known-limitations list.",
   },
 ];

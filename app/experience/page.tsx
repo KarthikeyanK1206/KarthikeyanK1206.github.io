@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { education, roles, workHabits } from "@/lib/data/timeline";
+import { education, roles } from "@/lib/data/timeline";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -85,26 +85,6 @@ export default function ExperiencePage() {
           <span>The one-page resume <ArrowRight size={16} aria-hidden="true" /></span>
         </Link>
       </nav>
-
-      <section className="habits-section" aria-labelledby="habits-title">
-        <div>
-          <p className="eyebrow">How I work</p>
-          <h2 id="habits-title" className="habits-heading">Habits with receipts</h2>
-          <p className="habits-intro">Three working habits, each tied to an artifact from the roles above — not values, evidence.</p>
-        </div>
-        <div className="principle-list">
-          {workHabits.map((habit) => (
-            <article className="principle-row" key={habit.n}>
-              <span>{habit.n}</span>
-              <div>
-                <h3>{habit.title}</h3>
-                <p>{habit.body}</p>
-                <span className="principle-proof">Evidence: {habit.proof}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

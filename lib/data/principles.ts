@@ -27,7 +27,7 @@ export const principles: Principle[] = [
   {
     n: "04",
     title: "Write the reasoning down.",
-    body: "A decision without its recorded alternatives and costs is just an opinion with seniority. I write decision records so the next person can disagree with me precisely.",
+    body: "I write down alternatives and costs so design decisions can be reviewed and challenged precisely.",
     proof: "Every case study on this site publishes a decision / instead-of / why / cost table and a known-limitations list.",
   },
 ];

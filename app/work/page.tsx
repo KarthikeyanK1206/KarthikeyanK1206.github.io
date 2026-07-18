@@ -1,4 +1,3 @@
-import { ArrowDown } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -20,7 +19,7 @@ export default function WorkPage() {
         <p className="eyebrow">Engineering case studies</p>
         <h1>Three systems, one question.</h1>
         <p>
-          What should a system do when something fails? Each case study answers it at a different layer — and each one exposed the problem the next one studies. Read in order for the story, or jump to the chapter closest to the role you are hiring for.
+          What should a system do when something fails? Each case study answers it at a different layer. Read in order, or jump to the one closest to the role you are hiring for.
         </p>
       </header>
 
@@ -33,18 +32,9 @@ export default function WorkPage() {
       <section className="home-section" aria-labelledby="case-studies-title">
         <h2 id="case-studies-title" className="sr-only">Case studies in reading order</h2>
         <ol className="chapter-list">
-          {docs.map((doc, index) => (
+          {docs.map((doc) => (
             <li key={doc.slug} className="work-chapter">
-              <p className="chapter-marker">
-                <span>Chapter {String(index + 1).padStart(2, "0")}</span> {doc.chapterRole}
-              </p>
               <DocCard doc={doc} />
-              {index < docs.length - 1 && (
-                <p className="chapter-bridge">
-                  <ArrowDown size={15} aria-hidden="true" />
-                  <span>{doc.bridge.text}</span>
-                </p>
-              )}
             </li>
           ))}
         </ol>

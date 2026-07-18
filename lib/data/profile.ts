@@ -4,7 +4,7 @@ export const profile = {
   initials: "KK",
   role: "Backend & Distributed Systems Engineer",
   location: "Los Angeles, CA",
-  availability: "Seeking early-career software engineering roles",
+  availability: "Seeking new-grad backend/infrastructure SDE roles, available May 2027",
   email: "kk08430@usc.edu",
   phone: "213-292-0970",
   siteUrl: "https://karthikeyank1206.github.io",
